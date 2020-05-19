@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <input v-model="deckName" type="text"/>
-    <button class="btn btn-primary" v-on:click="addDeck(deckName)">Add Deck!</button>
-    <button v-on:click="viewDecks">View Decks!</button>
-    <DeckList></DeckList>
+    <div class="container">
+      <input v-model="deckName" type="text"/>
+      <button class="btn btn-primary" v-on:click="addDeck(deckName)">Add Deck!</button>
+      <button v-on:click="viewDecks">View Decks!</button>
+      <DeckList></DeckList>
+    </div>
   </div>
 </template>
 

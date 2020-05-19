@@ -20,10 +20,11 @@ const store = new Vuex.Store({
         Vue.set(state.decks, data.deckName, new DeckModel(data.deckName, data.description))
       }
     },
-    removeDeck(state, deckName) {
+    deleteDeck(state, deckName) {
+      console.log("here: " + deckName)
       if(deckName in state.decks)
       {
-        delete state.decks(deckName);
+        Vue.delete(state.decks, deckName);
       }
     }
   },
