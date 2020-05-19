@@ -1,17 +1,43 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <input v-model="deckName" type="text"/>
+    <button class="btn btn-primary" v-on:click="addDeck(deckName)">Add Deck!</button>
+    <button v-on:click="viewDecks">View Decks!</button>
+    <DeckList></DeckList>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DeckList from './components/Deck/DeckList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    DeckList
+  },
+  data() {
+    return {
+      deckName: ''
+    }
+  },
+  props: {
+  },
+  methods: {
+    addDeck() {
+      this.$store.commit('addDeck', { deckName: this.deckName, description: 'temp description' })
+    },
+    viewDecks() {
+      const decks = this.$store.getters.decks;
+
+      console.log(decks);
+
+      for(const [, deck] of Object.entries(decks)) {
+        console.log(deck.deckName)
+        console.log(deck.description)
+        console.log(deck.cards)
+      }
+    }
   }
 }
 </script>
@@ -25,4 +51,6 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+@import'~bootstrap/dist/css/bootstrap.css'
 </style>
