@@ -15,11 +15,10 @@ export default {
   },
   data() {
     return {
-      decks: {},
+      decks: this.$store.getters.decks,
     }
   },
   beforeMount() {
-    this.decks = this.$store.getters.decks;
   }
 }
 </script>

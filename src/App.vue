@@ -8,18 +8,18 @@
         </a>
       </p>
       <button v-on:click="viewDecks">View Decks!</button>
-      <DeckList></DeckList>
+      <router-link to="/edit">Edit</router-link>
+      <router-link to="/">Decks</router-link>
+      <router-view/>
     </div>
   </div>
 </template>
 
 <script>
-import DeckList from './views/DeckList.vue'
 
 export default {
   name: 'App',
   components: {
-    DeckList
   },
   data() {
     return {

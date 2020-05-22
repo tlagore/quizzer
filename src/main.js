@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './App.vue'
+import router from './router'
 import { BootstrapVue, BootstrapVueIcons  } from 'bootstrap-vue'
 import 'bootstrap-vue/dist/bootstrap-vue-icons.min.css'
 import DeckModel from './models/DeckModel'
@@ -36,6 +37,7 @@ const store = new Vuex.Store({
 })
 
 new Vue({
+  router: router,
   render: h => h(App),
   store: store
 }).$mount('#app')
