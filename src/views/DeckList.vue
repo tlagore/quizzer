@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import DeckDetail from './DeckDetail.vue';
+import DeckDetail from '../components/Deck/DeckDetail.vue';
 
 export default {
   components: {

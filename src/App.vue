@@ -2,7 +2,11 @@
   <div id="app">
     <div class="container">
       <input v-model="deckName" type="text"/>
-      <button class="btn btn-primary" v-on:click="addDeck(deckName)">Add Deck!</button>
+      <p class="h1">
+        <a v-on:click="addDeck(deckName)" href="#" class="m-auto">
+          <b-icon-plus-square variant="success"></b-icon-plus-square>
+        </a>
+      </p>
       <button v-on:click="viewDecks">View Decks!</button>
       <DeckList></DeckList>
     </div>
@@ -10,7 +14,7 @@
 </template>
 
 <script>
-import DeckList from './components/Deck/DeckList.vue'
+import DeckList from './views/DeckList.vue'
 
 export default {
   name: 'App',
